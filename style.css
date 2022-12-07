@@ -1,161 +1,181 @@
->* {
-  box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+}
+.headerimg {
+  /* The image used */
+  background-image: url("img/header.png");
+
+  min-height: 380px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Needed to position the navbar */
+  position: relative;
 }
 
-.body{
-  max-width: 1500px;
-  margin: 0;
-}
-
-.header { grid-area: header;}
-.nav { grid-area: nav;}
-.main { grid-area: main;}
-.footer { grid-area: footer;}
-}
-
+/* Position the navbar container inside the image */
 .container {
-    height: 100%;
-    display: grid;
-    grid-gap: 0px;
-    background-color: rgb(207,199,188);
-    padding: 20px;
-    grid-template-areas:
-    'header'
-    'nav'
-    'icon'
-    'main'
-    'footer';
+  position: absolute;
+  width: 100%;
+}
+/* Add a black background color to the top navigation */
+.nav {
+  position: relative;
+  background-color: rgba(247,241,238,0.75);
+  overflow: hidden;
+  padding: 30px 0;
+  padding-left: 70px;
 }
 
-.container > * {
-  background-color: rgb(207,199,188);
-  text-align:center;
-  padding: 20px 0;
-  font-size: 30px;
-}
-
-a:link {
-  color: rgb(255,255,255);
-  font-weight: 300;
-  letter-spacing: 2px;
-  background-color: rgba(217,209,197);
-  text-decoration: none;
-  padding: 20px 0px;
-  display: inline-block;
-  width:100%;
+/* Style the links inside the navigation bar */
+.nav-left a{
+  float: left;
+  color: #000000;
   text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.nav-right a{
+  float: left;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-a:visited {
-  color: rgb(255,255,255);
-  background-color: transparent;
-  text-decoration: none;
+/* Change the color of links on hover */
+.nav-left a:hover {
+  text-decoration: underline;
 }
 
-a:hover {
-  background-color: rgb(232,231,229);
-  text-decoration: none;
+.nav-right a:hover {
+  text-decoration: underline;
 }
 
-a:active {
-  color: yellow;
-  background-color: transparent;
-  text-decoration: none;
+/* Add a color to the active/current link */
+.nav-left a.active {
+  background-color: #04AA6D;
+  color: white;
 }
-.header {
-  background: url('header.png') 0 0 no-repeat;
+
+.nav-right a.active {
+  background-color: #04AA6D;
+  color: white;
 }
-.nav {
-  background-color: rgba(217,209,197);
+/* Centered section inside the top navigation */
+.nav-centered {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.navigation ul {
-  border: 0;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+
+/* Right-aligned section inside the top navigation */
+.nav-right {
+  float: right;
+  padding-right: 70px;
+}
+.box1 {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap; wrap;
+  padding: 40px 200px;
+  text-align: center;
+  background-color: rgba(247,241,238);
 }
 
-.navigation li {
+.box2 {
+  display: flex;
+  flex-wrap; wrap;
+  padding: 40px 200px;
+  text-align: center;
+  background-color: rgba(224,217,209);
+}
+
+.box3 {
+  display: flex;
+  flex-wrap; wrap;
+  padding: 40px 200px;
+  text-align: center;
+  background-color: rgba(196,193,183);
+}
+.box1 > * {
   flex-basis: 100%;
 }
-.icon {
-  background-color: rgba(217,209,197);
-}
-.icons ul {
-  border: 0;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.icons li {
+.box2 > * {
   flex-basis: 100%;
 }
-.main {
-    height:auto;
+.box3 > * {
+  flex-basis: 100%;
 }
+
+.pic {
+  width: 100%;
+  max-width: 329px;
+  height: auto;
+}
+
 .footer {
-background-color: rgba(217,209,197);
+  padding: 40px 200px;
+  text-align: center;
+  background-color: rgba(168,163,157);
 }
-
-/*550 px or above */
-@media (min-width: 550px) {
-
-  .container {
-    border:none;
-    margin:auto;
-      height: 100%;
-      max-width: 1800px;
-      display: grid;
-      grid-gap: 0px;
-      background-color: #;
-      padding: 0px;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
-      grid-template-areas:
-      'header header'
-      'nav icon'
-      'main main'
-      'footer footer';
-    }
-  .header {
-    height: 400px;
+/* Responsive navigation menu - display links on top of each other instead of next to each other (for mobile devices) */
+@media screen and (max-width: 1200px) {
+  .nav-centered {
+    display: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
   }
-.icon {
-display: flex;
-justify-content: right;
-align-items: center;
-height: 35px;
-}
-.icons {
-  width: 300px;'
-}
-.nav {
-  display: flex;
-  align-items: center;
-  height: 35px;
-}
-.navigation {
-  width: 500px;
-}
-.icons ul {
-  flex-wrap: nowrap;
+  .box1 {
+    padding: 20px 100px;
+  }
+
+  .box2 {
+    padding: 20px 100px;
+  }
+
+  .box3 {
+    padding: 20px 100px;
+  }
 }
 
-.navigation ul {
-      flex-wrap: nowrap;
-    }
+/* Responsive navigation menu - display links on top of each other instead of next to each other (for mobile devices) */
+@media screen and (max-width: 550px) {
+  .nav a, .nav-right {
+    float: none;
+    display: block;
+    padding-right: 0px;
+    padding: 5px;
+  }
+  .nav {
+    padding-left: 0px;
+  }
 
-    .main {
-      height:auto;
-      min-height: 300px;
-    }
+  .nav-centered {
+    display: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+  .box1 {
+    padding: 20px 20px;
+  }
 
-    .footer {
-      height: 150px;
-    }
+  .box2 {
+    padding: 20px 20px;
+  }
+
+  .box3 {
+    padding: 20px 20px;
+  }
 }

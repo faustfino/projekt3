@@ -2,6 +2,47 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+  font-family: 'anek Malayalam';
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+h1 {
+   font-family: 'Playfair Display';
+   font-size: 40px;
+   font-weight: normal;
+      font-style: normal;
+      line-height: 0.7em;
+}
+
+h2 {
+   font-family: 'thesignature';
+   font-size: 50px;
+   font-weight: normal;
+      font-style: normal;
+      line-height: 0.2em;
+      color: rgba(168,156,136);
+}
+
+h3 {
+   font-family: 'Playfair Display';
+   font-size: 30px;
+   font-weight: normal;
+      font-style: normal;
+      line-height: 0.6em;
+}
+
+h4 {
+   font-family: 'thesignature';
+   font-size: 40px;
+   font-weight: normal;
+      font-style: normal;
+      line-height: 0.1em;
+      color: rgba(240,223,193);
+}
+
 .headerimg {
   /* The image used */
   background-image: url("img/header.png");
@@ -27,8 +68,8 @@
   position: relative;
   background-color: rgba(247,241,238,0.75);
   overflow: hidden;
-  padding: 30px 0;
-  padding-left: 70px;
+  padding: 20px 0;
+  padding-left: 400px;
 }
 
 /* Style the links inside the navigation bar */
@@ -41,7 +82,7 @@
   font-size: 17px;
 }
 .nav-right a{
-  float: left;
+  float: right;
   color: #000000;
   text-align: center;
   padding: 14px 16px;
@@ -80,7 +121,7 @@
 /* Right-aligned section inside the top navigation */
 .nav-right {
   float: right;
-  padding-right: 70px;
+  padding-right: 400px;
 }
 .box1 {
   display: flex;
@@ -121,11 +162,41 @@
   height: auto;
 }
 
-.footer {
+.footerbox {
+  display: flex;
+  flex-wrap; wrap;
   padding: 40px 200px;
   text-align: center;
   background-color: rgba(168,163,157);
+  box-shadow: 0 -10px 20px -5px rgba(115,115,115,0.75);
 }
+
+.footerbox > * {
+  flex-basis: 100%;
+}
+
+.footerpic {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+a{
+  color: #000000;
+  text-decoration: none;
+}
+
+/* Change the color of links on hover */
+a:hover {
+  text-decoration: underline;
+}
+
+/* Add a color to the active/current link */
+a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
 /* Responsive navigation menu - display links on top of each other instead of next to each other (for mobile devices) */
 @media screen and (max-width: 1200px) {
   .nav-centered {
